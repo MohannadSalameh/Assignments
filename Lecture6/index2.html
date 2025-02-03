@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms 2 (Assignment)</title>
+</head>
+<body>
+    <h1>Assignment On Forms</h1><br>
+    <form>
+        <label for="firstName">First Name:</label><br />
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        placeholder="Enter First Name"
+        required
+        minlength="4"
+        maxlength="16"
+      />
+
+      <br /><br />
+
+      <label for="secondName">Second Name:</label><br />
+      <input
+        type="text"
+        name="secondName"
+        id="secondName"
+        placeholder="Enter Second Name"
+        minlength="4"
+        maxlength="25"
+      />
+
+      <br /><br />
+
+      <label for="familyName">Family Name:</label><br />
+      <input
+        type="text"
+        name="familyName"
+        id="familyName"
+        placeholder="Enter family Name"
+        required
+        minlength="4"
+        maxlength="16"
+      />
+
+      <br><br>
+
+      <label for="age">Age:</label><br />
+      <input
+        type="number"
+        name="age"
+        id="age"
+        placeholder="Please Enter Age!"
+      />
+
+      <br><br>
+
+      <label for="birthday">Birthday:</label><br />
+      <input type="date" name="birthday" id="birthday" required max="2025-02-03" />
+
+      <br /><br />
+
+      <label for="password">Password:</label><br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Please Enter Password!"
+        required
+        maxlength="8"
+      />
+
+      <br /><br />
+
+        <input type="submit" name="createUser" id="createUser" value="Create User">
+    </form>
+</body>
+</html>
