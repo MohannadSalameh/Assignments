@@ -1,0 +1,20 @@
+
+#skills {
+    font-size: 30px;
+    color: gray;
+}
+
+#home {
+    background-image: url(gray_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.section2 {
+    background-image: url(htu\ logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    background-color: #fff5f2;
+}
