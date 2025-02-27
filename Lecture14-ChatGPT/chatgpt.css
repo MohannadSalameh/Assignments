@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #3d3d3d;
+}
+
+.page {
+    display: flex;
+    max-height: 100vh;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    gap: 20px;
+    padding: 10px 30px;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+nav .space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+p {
+    font-size: 14px;
+    padding: 5px 0px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+header h3 {
+    color: #3d3d3d;
+    font-weight: 600;
+}
+header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.center {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.text-area {
+    border: 1px solid #f0f0f0;
+    box-shadow: 1px 1px 3px #e6e6e6;
+    border-radius: 20px;
+    padding: 15px;
+}
+.text-area input {
+    min-width: 700px;
+    height: 50px;
+    border: none;
+    font-size: 18px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions button {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 20px;
+    height: 40px;
+    width: 70px;
+}
+.actions .plus {
+    width: 40px;
+    font-size: 17px;
+    border-radius: 50%;
+}
+
+.right-btns img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.more-btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.more-btns button {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
