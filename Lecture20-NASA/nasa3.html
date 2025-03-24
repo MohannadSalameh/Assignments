@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header class=" px-3 py-2 bg-black overflow-x-hidden">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 row">
+                <div class="dropdown col-4">
+                    <button class="btn btn-secondary bg-black border-black dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="fs-6 fw-bold">Explore</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <form class="d-flex col-6" role="search">
+                    <input class="form-control me-2 bg-black border-secondary border-1" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+
+            <div class="col-2 d-flex justify-content-center align-items-center">
+                <img class="img-fluid logo" src="nasa-logo.svg" alt="">
+            </div>
+
+            <div class="col-4 row">
+                <div class="dropdown col-4">
+                    <button class="btn btn-secondary bg-black border-black dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="fs-6 fw-bold">News & Events</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown col-4">
+                    <button class="btn btn-secondary bg-black border-black dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="fs-6 fw-bold">Multimedia</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <button class="col-4 btn">
+                    <a class="text-decoration-none text-light" href="#" target="_blank">
+                        <span class="fs-6 fw-bold">NASA+ </span>
+                        <span class="fw-light fs-6 border border-danger rounded">Live</span>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </header>
+<!--********************************Header end and Containers start*******************************-->
+    <div class="container d-flex flex-column py-5">
+        <h4>
+            LIVE Saturday, March 15, 9:45 p.m. EDT (0145 UTC)
+        </h4>
+        <hr>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-5">
+                <img class="rounded-circle crew" src="crew.webp" alt="">
+                <h2 class=" d-inline px-5">
+                    NASA’s SpaceX Crew-10
+                </h2>
+            </div>
+            <h6 class="col-5 d-flex">
+                Coverage of the rendezvous, docking, hatch opening, and welcoming <br>
+                remarks of NASA’s SpaceX Crew-10 at the International Space Station
+            </h6>
+            <button type="button" class="btn btn-danger col-1 d-flex align-items-center arrow rounded-circle">></button>
+        </div>
+    </div>
+    <!--***-->
+    <div class="position-relative text-white vh-100 d-flex flex-column justify-content-between p-5" 
+            style="background: url(nasa-bg.webp) center/cover no-repeat;">
+        
+        <!-- Dark Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"></div>  
+
+        <!-- Main Content -->
+        <div class="container position-relative d-flex-column justify-content-start flex-nowrap col-5 m-0">
+            <h1 class="display-3 fw-bold">NASA’s SpaceX Crew-10</h1>
+            <p class="lead">
+                The agency’s SpaceX Crew-10 mission launched to the International Space Station at 
+                7:03 p.m. EDT Friday, March 14, from Launch Complex 39A at Kennedy Space Center in Florida. 
+                The spacecraft will autonomously dock to the space station at 11:30 p.m. EDT on Saturday, March 15.
+            </p>
+            <a href="#" class="btn btn-danger btn-lg">Mission Updates</a>
+        </div>
+
+        <!-- Bottom Details (Inside Hero Section) -->
+        <div class=" position-relative text-white d-flex justify-content-start align-items-center container">
+            <div class="row text-centerm-0 col-8">
+                <div class="col-md-4">
+                    <hr>
+                    <p class="text-uppercase small opacity-75">Humans in Space</p>
+                    <a href="#" class="text-white text-decoration-none fw-bold">Meet the Crew <span class="text-danger">➤</span></a>
+                </div>
+                <div class="col-md-4">
+                    <hr>
+                    <p class="text-uppercase small opacity-75">Expedition 73</p>
+                    <a href="#" class="text-white text-decoration-none fw-bold">Space Station Science <span class="text-danger">➤</span></a>
+                </div>
+                <div class="col-md-4">
+                    <hr>
+                    <p class="text-uppercase small opacity-75">Commercial Crew Program</p>
+                    <a href="#" class="text-white text-decoration-none fw-bold">Low-Earth Orbit <span class="text-danger">➤</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--*************-->
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center py-3">
+            <h1>Featured News</h1>
+            <h4 class="d-inline">
+                <span>Recently Published</span>
+                <span>
+                    <button type="button" class="btn btn-danger col-1 d-flex align-items-center arrow2 rounded-circle">></button>
+                </span>
+            </h4>
+        </div>
+    </div>
+
+    <div class="row container justify-content-center align-items-center">
+        <div class="col-6">
+            <img class="news1" src="news1.webp" alt="">
+        </div>
+        <div class="col-3">
+            <img class="news2" src="news2.webp" alt="">
+        </div>
+        <div class="col-3 d-flex-column">
+            <img class="news3" src="news3.png" alt="">
+            <img class="news4" src="news4.webp" alt="">
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
