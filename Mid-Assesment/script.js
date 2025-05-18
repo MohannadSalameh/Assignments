@@ -1,183 +1,173 @@
-function validateForm(){
-  const email = document.getElementById("email").value.trim();
+function validateForm() {
   const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+ 
   const phone = document.getElementById("phone").value.trim();
   const gender = document.getElementById("gender").value.trim();
   const address = document.getElementById("address").value.trim();
-  
+
   let isValid = true;
 
   if (!email.includes("@") || !email.includes(".")) {
-      emailError.textContent = "Enter a valid email (must include @ and .)";
-      isValid = false;
-    }else {
-      emailError.textContent = "";  
+    emailError.textContent = "Enter a valid email (must include @ and .)";
+    isValid = false;
+  } else {
+    emailError.textContent = "";
   }
 
-
-  if(!/^[A-Za-z\s]+$/.test(name)){
-      nameError.textContent = "Name must only contain alphabatic charachters";
-      isValid = false;
-  }else if (name.length < 1){
-      nameError.textContent = "Name cannot be empty.";
-      isValid = false;
-  }else {
-      nameError.textContent = "";  
+  if (!/^[A-Za-z\s]+$/.test(name)) {
+    nameError.textContent = "Name must only contain alphabatic charachters";
+    isValid = false;
+  } else if (name.length < 1) {
+    nameError.textContent = "Name cannot be empty.";
+    isValid = false;
+  } else {
+    nameError.textContent = "";
   }
 
-
-
-  if(!/^\d{10,}$/.test(phone)){
-      phoneError.textContent = "Phone number must be at least 10 digists.";
-      isValid = false;
-  }else {
-      phoneError.textContent = "";  
+  if (!/^\d{10,}$/.test(phone)) {
+    phoneError.textContent = "Phone number must be at least 10 digists.";
+    isValid = false;
+  } else {
+    phoneError.textContent = "";
   }
 
-
-
-  if (gender === "--Select--"){
-      genderError.textContent = "Please select a gender.";
-      isValid = false;
-  }else {
-      genderError.textContent = "";  
+  if (gender === "--Select--") {
+    genderError.textContent = "Please select a gender.";
+    isValid = false;
+  } else {
+    genderError.textContent = "";
   }
 
-
-  if(address.length === 0){
-      addressError.textContent = "Address cannot be empty."
-      isValid = false;
-  }else {
-      addressError.textContent = "";  
+  if (address.length === 0) {
+    addressError.textContent = "Address cannot be empty.";
+    isValid = false;
+  } else {
+    addressError.textContent = "";
   }
   return isValid;
 }
 
+function showSection(sectionId) {
+  document.getElementById("signup").style.display =
+    sectionId === "signup" ? "block" : "none";
+  document.getElementById("preview").style.display =
+    sectionId === "preview" ? "block" : "none";
 
-function showSection(sectionId){
-  document.getElementById('signup').style.display = sectionId === 'signup' ? 'block' : 'none';
-  document.getElementById('preview').style.display = sectionId === 'preview' ? 'block' : 'none';
-
-  const tabLinks = document.querySelectorAll('.nav-link');
-  tabLinks.forEach(link => {
-      link.classList.remove('active');
+  const tabLinks = document.querySelectorAll(".nav-link");
+  tabLinks.forEach((link) => {
+    link.classList.remove("active");
   });
 
-  if (sectionId === 'signup') {
-      document.querySelector('a[href="#"]').classList.add('active');
-  } else if (sectionId === 'preview') {
-      document.querySelectorAll('a[href="#"]')[1].classList.add('active');
-      viewUsers();
+  if (sectionId === "signup") {
+    document.querySelector('a[href="#"]').classList.add("active");
+  } else if (sectionId === "preview") {
+    document.querySelectorAll('a[href="#"]')[1].classList.add("active");
+    viewUsers();
   }
 }
 
 
 
 function toggleView(viewType) {
-  document.getElementById('tableSection').style.display = viewType === 'table' ? 'block' : 'none';
-  document.getElementById('cards-container').style.display = viewType === 'card' ? 'flex' : 'none';
+  document.getElementById("tableSection").style.display =
+    viewType === "table" ? "block" : "none";
+  document.getElementById("cards-container").style.display =
+    viewType === "card" ? "flex" : "none";
 }
 
-toggleView('table');
+toggleView("table");
 
 ///////////////////////////////////////////////
 
+let userList = [];
 
-let userList=[]
+class User {
+  constructor(email, name, phone, gender, address) {
+    this.email = email;
+    this.name = name;
+    this.phone = phone;
+    this.gender = gender;
+    this.address = address;
+  }
+}
 
-  class User{
-      constructor(email,name,phone,gender,address){
-          this.email=email;
-          this.name=name;
-          this.phone=phone;
-          this.gender=gender;
-          this.address=address;
-          
-      }
+function addUser(event) {
+  if (!validateForm()) {
+    event.preventDefault();
+    return;
   }
 
-  function addUser(event){
+  const email = document.getElementById("email").value;
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const gender = document.getElementById("gender").value;
+  const address = document.getElementById("address").value;
 
-      if(!validateForm()){
-          event.preventDefault();
-          return;
-      }
+  const user = new User(email, name, phone, gender, address);
+  userList.push(user);
 
-      const email=document.getElementById('email').value;
-      const name=document.getElementById('name').value;
-      const phone=document.getElementById('phone').value;
-      const gender=document.getElementById('gender').value;
-      const address=document.getElementById('address').value;
+  document.getElementById("email").value = "";
+  document.getElementById("name").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("gender").value = "--Select--";
+  document.getElementById("address").value = "";
 
-      const user = new User(email,name,phone,gender,address);
-      userList.push(user);
+  alert("User added successfully");
+}
 
-      document.getElementById('email').value="";
-      document.getElementById('name').value="";
-      document.getElementById('phone').value="";
-      document.getElementById('gender').value="--Select--";
-      document.getElementById('address').value="";
+function viewUsers() {
+  const table = document
+    .getElementById("table")
+    .getElementsByTagName("tbody")[0];
+  const cardsContainer = document.getElementById("cards-container");
 
-      alert("User added successfully");
-  }
+  table.innerHTML = "";
+  cardsContainer.innerHTML = "";
 
-  
-  function viewUsers(){
-      const table=document.getElementById('table').getElementsByTagName('tbody')[0];
-      const cardsContainer = document.getElementById('cards-container');
-  
+  userList.forEach((elements) => {
+    const row = document.createElement("tr");
 
-      table.innerHTML = '';
-  cardsContainer.innerHTML = '';
+    const emailTd = document.createElement("td");
+    emailTd.textContent = elements.email;
 
-      userList.forEach(elements=>
-  {
-      const row=document.createElement('tr');
+    const nameTd = document.createElement("td");
+    nameTd.textContent = elements.name;
 
-      const emailTd = document.createElement('td');
-      emailTd.textContent =elements.email;
+    const phoneTd = document.createElement("td");
+    phoneTd.textContent = elements.phone;
 
-      const nameTd = document.createElement('td');
-      nameTd.textContent =elements.name;
-      
-      const phoneTd = document.createElement('td');
-      phoneTd.textContent =elements.phone;
-      
-      const genderTd = document.createElement('td');
-      genderTd.textContent =elements.gender;
-      
-      const addressTd = document.createElement('td');
-      addressTd.textContent =elements.address;
-      
-      row.appendChild(emailTd);
-      row.appendChild(nameTd);
-      row.appendChild(phoneTd);
-      row.appendChild(genderTd);
-      row.appendChild(addressTd);
+    const genderTd = document.createElement("td");
+    genderTd.textContent = elements.gender;
 
-      
-      table.appendChild(row);
-  
-  renderUserCard(elements);
+    const addressTd = document.createElement("td");
+    addressTd.textContent = elements.address;
 
+    row.appendChild(emailTd);
+    row.appendChild(nameTd);
+    row.appendChild(phoneTd);
+    row.appendChild(genderTd);
+    row.appendChild(addressTd);
+
+    table.appendChild(row);
+
+    renderUserCard(elements);
   });
-  
+}
 
-  }
+function renderUserCard(user) {
+  const container = document.getElementById("cards-container");
 
-  function renderUserCard(user) {
-      const container = document.getElementById("cards-container");
-  
-      const card = document.createElement("div");
-      card.className = "card";
-  
-      card.innerHTML = `
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
           <h5>${user.name}</h5>
           <p><strong>Email:</strong> ${user.email}</p>
           <p><strong>Phone:</strong> ${user.phone}</p>
           <p><strong>Gender:</strong> ${user.gender}</p>
           <p><strong>Address:</strong> ${user.address}</p>
       `;
-  
-      container.appendChild(card);
-  }
+
+  container.appendChild(card);
+}
