@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const { Pool } = pg;
-
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl:
@@ -17,6 +16,7 @@ pool.connect().then(() => {
   console.log("Database connected!");
 });
 
+// making a query function to be used instead of pool.query
 export const query = (text, params) => pool.query(text, params);
 
 export default pool;
