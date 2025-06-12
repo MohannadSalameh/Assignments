@@ -1,0 +1,50 @@
+.div1 {
+    width: 150px;
+    height: 150px;
+    background-color: gray;
+    animation: myAnimation 3s infinite;
+}
+
+.div2 {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    animation: myAnimation2 3s infinite;
+}
+
+
+@keyframes  myAnimation {
+    0% {
+        transform: translate(0,0);
+    }
+    25% {
+        transform: translate(200px, 0);
+    }
+    50% {
+        transform: translate(200px, 200px);
+    }
+    75% {
+        transform: translate(0, 200px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes  myAnimation2 {
+    0% {
+        transform: rotate(180deg);
+    }
+    25% {
+        transform: translate(250px, 0);
+    }
+    50% {
+        transform: translate(250px, 250px);
+    }
+    75% {
+        transform: translate(0, 250px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}

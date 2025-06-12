@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>OOP</title>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <label for="username">User Name:</label><br />
+        <input type="text" placeholder="username" id="username" name="username"/> <br> <br>
+        <label for="password">Password:</label><br />
+        <input type="text" placeholder="password" id="password" name="password"/> <br> <br>
+        <label for="birthday">Birthday:</label><br />
+        <input type="date" name="birthdate" id="birthdate" required max="2025-05-04" /> <br> <br>
+        <label for="gender">Gender:</label><br>
+    <input type="radio" name="gender" id="gender" value="1">Male <br>
+    <input type="radio" name="gender" id="gender" value="0">Female <br>
+    <br>
+    <label for="skills">Skills:</label><br>
+    <input type="checkbox" name="skills" id="html" value="6">HTML <br>
+    <input type="checkbox" name="skills" id="css" value="7">CSS <br>
+    <input type="checkbox" name="skills" id="javaScript" value="8">JavaScript <br>
+    <input type="checkbox" name="skills" id="php" value="9">PHP <br>
+    <input type="checkbox" name="skills" id="nodeJs" value="10">Node.JS <br>
+    <br><br>
+    <label for="country">Country</label><br>
+    <select name="country" id="country" multiple>
+        <option value="jo">Jordan</option>
+        <option value="ir">Iraq</option>
+        <option value="syr">Syria</option>
+        <option value="pal">Palestine</option>
+    </select>
+    <br><br>
+    <input list="teams">
+    <datalist name="teams" id="teams">
+        <option value="Bar">Barcelona</option>
+        <option value="Rma">Real Madrid</option>
+        <option value="Liv">Liverpool</option>
+        <option value="Bay">Bayern Munich</option>
+        <option value="Atm">Atletico Madrid</option>
+    </datalist>
+    <br><br>
+    <button type="submit">Save</button>
+    </form>
+    <p id="errorMessage" style="color: red;"></p>
+</body>
+</html>

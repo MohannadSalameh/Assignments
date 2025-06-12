@@ -1,0 +1,44 @@
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+::placeholder {
+    color: #ccc;
+}
+::-ms-input-placeholder { /* Edge 12 -18 */
+    color: #ccc;
+}
+
+.crew {
+    width: 80px;
+    height: 80px;
+}
+
+.arrow {
+    width: 35px;
+    height: 35px;
+}
+
+.arrow2 {
+    width: 15px;
+    height: 25px;
+}
+
+
+.news1 {
+    width: 200px;
+    height: 200px;
+}
+.news2 {
+    width: 100px;
+    height: 200px;
+}
+.news3 {
+    width: 100px;
+    height: 100px;
+}
+.news4 {
+    width: 100px;
+    height: 100px;
+}
